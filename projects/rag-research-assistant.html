@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ML Research Assistant | Multi-Agent RAG Learning Platform</title>
+
+    <meta name="description"
+        content="ML Research Assistant is a retrieval-augmented generation (RAG) platform that answers machine learning questions using grounded textbook knowledge, citation-based responses, and intelligent web fallback.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                John <span class="logo-accent">Merwin</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#projects">Projects</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container project-page">
+
+        <section class="project-header">
+
+            <div class="badge">
+                RAG & Multi-Agent AI
+            </div>
+
+            <h1>
+                ML Research Assistant
+                <span class="text-gradient">Knowledge Platform</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                AI-powered retrieval-augmented generation platform for machine learning education
+            </p>
+
+        </section>
+
+
+        <section class="project-content">
+
+            <div class="project-section">
+
+                <h2>
+                    The Challenge
+                </h2>
+
+                <p>
+                    Students learning machine learning often rely on general-purpose AI assistants
+                    that may provide incomplete explanations, omit citations, or occasionally
+                    generate inaccurate information. The goal was to create an educational assistant
+                    that prioritizes trusted textbook knowledge before consulting external sources,
+                    helping learners receive more reliable and verifiable answers.
+                </p>
+
+            </div>
+
+
+            <div class="project-section highlight-card">
+
+                <h2>
+                    ⚡ Solution
+                </h2>
+
+                <p>
+                    ML Research Assistant combines retrieval-augmented generation (RAG),
+                    multi-agent orchestration, semantic search, and citation enforcement to answer
+                    machine learning questions using authoritative textbook content. When the local
+                    knowledge base cannot answer a question, a secondary research agent performs
+                    controlled web research to supplement the response.
+                </p>
+
+            </div>
+
+
+            <div class="project-section">
+
+                <h2>
+                    Workflow Overview
+                </h2>
+
+                <div class="img-wrapper">
+                    <img src="../images/projects/rag-workflow-overview.png" alt="ML Research Assistant workflow overview">
+                </div>
+
+                <p>
+                    User questions are first matched against an indexed machine learning textbook
+                    stored in a vector database. Relevant passages are retrieved through semantic
+                    search and supplied to the language model to generate grounded responses with
+                    citations. If no relevant material is found, a specialized research agent
+                    retrieves additional information from trusted online sources before preparing
+                    the final answer.
+                </p>
+
+            </div>
+
+
+            <div class="project-section">
+
+                <h2>
+                    Key Features
+                </h2>
+
+                <div class="feature-grid">
+
+                    <div class="feature-card">
+
+                        <h3>
+                            Grounded Retrieval
+                        </h3>
+
+                        <p>
+                            Answers are generated from indexed textbook content whenever relevant
+                            information exists, reducing reliance on model memory and improving
+                            factual consistency.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-card">
+
+                        <h3>
+                            Citation Enforcement
+                        </h3>
+
+                        <p>
+                            Retrieved passages are incorporated into every textbook-derived
+                            response, allowing learners to verify explanations against the original
+                            source material while helping reduce hallucinations.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-card">
+
+                        <h3>
+                            Intelligent Fallback
+                        </h3>
+
+                        <p>
+                            When the knowledge base cannot answer a question, a dedicated research
+                            agent performs web searches and synthesizes information before
+                            presenting the final response.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-section">
+
+                <h2>
+                    Technical Architecture
+                </h2>
+
+                <div class="img-wrapper">
+
+                    <img src="../images/projects/rag-architecture-technical.png"
+                        alt="ML Research Assistant technical architecture">
+
+                </div>
+
+                <p>
+                    The architecture integrates Streamlit, Agno AI agents, embedding generation,
+                    PostgreSQL with pgvector, semantic similarity search, and LLM-based response
+                    generation. Role-based agent orchestration coordinates retrieval, citation
+                    validation, and fallback web research to deliver accurate, context-aware
+                    responses.
+                </p>
+
+            </div>
+
+
+            <div class="project-section">
+
+                <h2>
+                    Technology Stack
+                </h2>
+
+                <div class="tech-pills">
+
+                    <span>Python</span>
+                    <span>Agno AI</span>
+                    <span>Streamlit</span>
+                    <span>PostgreSQL</span>
+                    <span>pgvector</span>
+                    <span>OpenAI Embeddings</span>
+                    <span>RAG</span>
+                    <span>Multi-Agent AI</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-section">
+
+                <h2>
+                    Future Roadmap
+                </h2>
+
+                <p>
+                    The current implementation indexes a foundational machine learning textbook to
+                    support introductory topics. The architecture is designed to scale by adding
+                    additional textbooks covering deep learning, large language models, statistics,
+                    reinforcement learning, and other AI disciplines, creating a comprehensive
+                    educational knowledge platform.
+                </p>
+
+            </div>
+
+
+            <div class="project-section">
+
+                <h2>
+                    Demonstration Access
+                </h2>
+
+                <p>
+                    The application is deployed on Streamlit Community Cloud and is available
+                    through controlled access. Authentication protects commercial LLM API usage
+                    while allowing demonstrations of the complete retrieval, citation, and
+                    multi-agent workflow.
+                </p>
+
+            </div>
+
+
+            <div class="action-footer">
+
+                <a class="button primary" href="../index.html">
+                    Back to Portfolio
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 John Merwin</p>
+    </footer>
+
+</body>
+
+</html>

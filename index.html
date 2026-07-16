@@ -12,10 +12,12 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Google Font -->
+    <!-- Google Font & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for high-tech aesthetic -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
@@ -23,7 +25,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                John Merwin
+                John <span class="logo-accent">Merwin</span>
             </div>
 
             <div class="nav-links">
@@ -35,15 +37,13 @@
         </nav>
     </header>
 
-
-    <main>
+    <main class="container">
 
         <section class="hero">
-
             <div class="hero-content">
-
+                <div class="badge"><i data-lucide="cpu"></i> Open for Select Engagements</div>
                 <h1>
-                    Generative AI Engineer | AI/ML Engineer
+                    Generative AI Engineer <br><span class="text-gradient">&amp; AI/ML Builder</span>
                 </h1>
 
                 <p class="hero-subtitle">
@@ -52,232 +52,232 @@
                     and multi-agent architectures.
                 </p>
 
-                <p>
+                <p class="hero-description">
                     Experienced software engineer and data scientist with a background
                     delivering technology solutions in enterprise and international
                     development environments.
                 </p>
 
                 <div class="hero-buttons">
-
                     <a class="button primary" href="#projects">
-                        View Projects
+                        View Projects <i data-lucide="arrow-right"></i>
                     </a>
-
                     <a class="button secondary" href="assets/John_Merwin_Resume.pdf">
-                        Download Resume
+                        Download Resume <i data-lucide="download"></i>
                     </a>
-
                 </div>
-
             </div>
-
         </section>
-
-
 
         <section id="about" class="section">
-
-            <h2>About</h2>
-
-            <p>
-                I am a Generative AI Engineer with experience designing and deploying
-                production AI applications, including retrieval-augmented generation
-                systems, AI assistants, semantic search solutions, and multi-agent
-                workflows.
-            </p>
-
-            <p>
-                My engineering foundation spans software development, enterprise systems,
-                data science, and analytics. I have delivered technology solutions in
-                complex organizational environments, including my work at the
-                Inter-American Development Bank.
-            </p>
-
-            <p>
-                I am particularly interested in applying Generative AI to solve practical
-                problems in enterprise, public-sector, and social-impact organizations.
-            </p>
-
+            <div class="section-header">
+                <h2>About Me</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I am a Generative AI Engineer with experience designing and deploying
+                        production AI applications, including retrieval-augmented generation
+                        systems, AI assistants, semantic search solutions, and multi-agent
+                        workflows.
+                    </p>
+                    <p>
+                        My engineering foundation spans software development, enterprise systems,
+                        data science, and analytics. I have delivered technology solutions in
+                        complex organizational environments, including my work at the
+                        <strong>Inter-American Development Bank</strong>.
+                    </p>
+                    <p>
+                        I am particularly interested in applying Generative AI to solve practical
+                        problems in enterprise, public-sector, and social-impact organizations.
+                    </p>
+                </div>
+            </div>
         </section>
 
-
-
         <section id="projects" class="section">
-
-            <h2>Featured Projects</h2>
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <div class="divider"></div>
+            </div>
 
             <div class="cards">
 
+                <!-- Project 1 -->
                 <div class="card">
-
-                    <h3>
-                        <a href="projects/linguify.html">
-                            Linguify
+                    <div class="card-body">
+                        <div class="card-icon"><i data-lucide="languages"></i></div>
+                        <h3>Linguify</h3>
+                        <p>
+                            AI-powered multilingual document translation platform supporting
+                            multilingual workflows using modern LLM APIs.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="tags">
+                            <span class="tag">Claude</span>
+                            <span class="tag">GPT</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">AWS</span>
+                        </div>
+                        <a class="button secondary card-btn" href="projects/linguify.html">
+                            Technical Overview <i data-lucide="external-link"></i>
                         </a>
-                    </h3>
-
-                    <p>
-                        AI-powered multilingual document translation platform supporting
-                        multilingual workflows using modern LLM APIs.
-                    </p>
-
-                    <p class="technology">
-                        Claude • GPT • Python • AWS
-                    </p>
-
-                    <a class="button secondary" href="projects/linguify.html">
-                        View Project
-                    </a>
-
+                    </div>
                 </div>
 
-
+                <!-- Project 2 -->
                 <div class="card">
-
-                    <h3>EssayLens</h3>
-
-                    <p>
-                        Multi-agent AI system for structured essay evaluation,
-                        scoring, and feedback generation.
-                    </p>
-
-                    <p class="technology">
-                        LangGraph • CrewAI • Pydantic • Streamlit
-                    </p>
-                    <a class="button secondary" href="projects/essaylens.html">
-                        View Project
-                    </a>
+                    <div class="card-body">
+                        <div class="card-icon"><i data-lucide="git-branch"></i></div>
+                        <h3>EssayLens</h3>
+                        <p>
+                            Multi-agent AI system for structured essay evaluation,
+                            scoring, and feedback generation.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="tags">
+                            <span class="tag">LangGraph</span>
+                            <span class="tag">CrewAI</span>
+                            <span class="tag">Pydantic</span>
+                            <span class="tag">Streamlit</span>
+                        </div>
+                        <a class="button secondary card-btn" href="projects/essaylens.html">
+                            Technical Overview <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
                 </div>
 
-
+                <!-- Project 3 -->
                 <div class="card">
-
-                    <h3>DeepSeek LoRA Fine-Tuning</h3>
-
-                    <p>
-                        Fine-tuned open-source LLMs using parameter-efficient
-                        techniques and distributed GPU training.
-                    </p>
-
-                    <p class="technology">
-                        PyTorch • Transformers • PEFT • LoRA
-                    </p>
-                    <a class="button secondary" href="projects/lora-finetuning.html">
-                        View Project
-                    </a>
+                    <div class="card-body">
+                        <div class="card-icon"><i data-lucide="sliders"></i></div>
+                        <h3>DeepSeek LoRA Fine-Tuning</h3>
+                        <p>
+                            Fine-tuned open-source LLMs using parameter-efficient
+                            techniques and distributed GPU training.
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Transformers</span>
+                            <span class="tag">PEFT</span>
+                            <span class="tag">LoRA</span>
+                        </div>
+                        <a class="button secondary card-btn" href="projects/lora-finetuning.html">
+                            Technical Overview <i data-lucide="external-link"></i>
+                        </a>
+                    </div>
                 </div>
 
-
+                <!-- Project 4 -->
                 <div class="card">
+                    <div class="card-body">
+                        <div class="card-icon"><i data-lucide="database"></i></div>
 
-                    <h3>Enterprise RAG Systems</h3>
+                        <h3>ML Research Assistant</h3>
 
-                    <p>
-                        Knowledge retrieval applications combining embeddings,
-                        vector databases, and LLM-based responses.
-                    </p>
+                        <p>
+                            Multi-agent RAG application that answers machine learning questions
+                            using grounded textbook knowledge, vector search, citations, and
+                            intelligent web research fallback.
+                        </p>
+                    </div>
 
-                    <p class="technology">
-                        RAG • Vector Databases • Semantic Search
-                    </p>
+                    <div class="card-footer">
 
+                        <div class="tags">
+                            <span class="tag">RAG</span>
+                            <span class="tag">Agno AI</span>
+                            <span class="tag">pgvector</span>
+                            <span class="tag">Multi-Agent</span>
+                        </div>
+
+                        <a class="button secondary card-btn" href="projects/rag-research-assistant.html">
+                            Technical Overview <i data-lucide="external-link"></i>
+                        </a>
+                        
+                    </div>
                 </div>
-
             </div>
-
         </section>
-
-
 
         <section id="skills" class="section">
-
-            <h2>Technical Expertise</h2>
-
-            <div class="skills">
-
-                <div>
-                    <h3>Generative AI</h3>
-                    <p>
-                        OpenAI GPT • Claude • Gemini • DeepSeek
-                        <br>
-                        RAG • Agents • Prompt Engineering
-                    </p>
-                </div>
-
-
-                <div>
-                    <h3>Engineering</h3>
-                    <p>
-                        Python • APIs • Docker
-                        <br>
-                        AWS • CI/CD • Cloud Deployment
-                    </p>
-                </div>
-
-
-                <div>
-                    <h3>Machine Learning</h3>
-                    <p>
-                        PyTorch • Scikit-learn
-                        <br>
-                        XGBoost • Data Science
-                    </p>
-                </div>
-
+            <div class="section-header">
+                <h2>Technical Expertise</h2>
+                <div class="divider"></div>
             </div>
 
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i data-lucide="brain-circuit"></i></div>
+                    <h3>Generative AI</h3>
+                    <ul class="skill-list">
+                        <li>OpenAI GPT • Claude • Gemini • DeepSeek</li>
+                        <li>RAG • Multi-Agent Systems • Prompt Engineering</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon"><i data-lucide="terminal"></i></div>
+                    <h3>Engineering</h3>
+                    <ul class="skill-list">
+                        <li>Python • APIs • Docker</li>
+                        <li>AWS • CI/CD • Cloud Deployment</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon"><i data-lucide="activity"></i></div>
+                    <h3>Machine Learning</h3>
+                    <ul class="skill-list">
+                        <li>PyTorch • Scikit-learn</li>
+                        <li>XGBoost • Data Science & Analytics</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
-
-
-        <section class="section impact">
-
-            <h2>AI for Social Impact</h2>
-
-            <p>
-                I am available for short-term engagements helping nonprofit and
-                international development organizations apply Generative AI to improve
-                knowledge management, research workflows, multilingual communication,
-                and operational efficiency.
-            </p>
-
+        <section class="section impact-section">
+            <div class="impact-card">
+                <h2><i data-lucide="globe"></i> AI for Social Impact</h2>
+                <p>
+                    I am available for short-term engagements helping nonprofit and
+                    international development organizations apply Generative AI to improve
+                    knowledge management, research workflows, multilingual communication,
+                    and operational efficiency.
+                </p>
+            </div>
         </section>
 
-
-
-        <section id="contact" class="section contact">
-
-            <h2>Connect</h2>
-
-            <p>
-                Interested in collaborating on Generative AI projects?
-            </p>
-
-            <a class="button primary" href="https://www.linkedin.com/in/john-merwin-ai" target="_blank">
-                LinkedIn
-            </a>
-
-            <a class="button secondary" href="https://github.com/john-merwin-ai" target="_blank">
-                GitHub
-            </a>
-
+        <section id="contact" class="section contact-section">
+            <div class="contact-card">
+                <h2>Let's Collaborate</h2>
+                <p>Interested in applying bleeding-edge Generative AI to your workflows?</p>
+                <div class="contact-buttons">
+                    <a class="button primary" href="https://www.linkedin.com/in/john-merwin-ai" target="_blank">
+                        <i data-lucide="linkedin"></i> LinkedIn
+                    </a>
+                    <a class="button secondary" href="https://github.com/john-merwin-ai" target="_blank">
+                        <i data-lucide="github"></i> GitHub
+                    </a>
+                </div>
+            </div>
         </section>
-
 
     </main>
 
-
-
     <footer>
-
-        <p>
-            © 2026 John Merwin. Built with HTML and CSS.
-        </p>
-
+        <p>© 2026 John Merwin. Handcrafted using modern HTML & CSS.</p>
     </footer>
 
-
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>

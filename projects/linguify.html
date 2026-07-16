@@ -7,6 +7,8 @@
     <title>Linguify | AI Document Translation Platform</title>
     <meta name="description"
         content="Linguify is an AI-powered multilingual document translation platform built using modern LLM technologies.">
+    <!-- Inter Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -14,184 +16,139 @@
 
     <header>
         <nav class="navbar">
-
             <div class="logo">
-                John Merwin
+                John <span class="logo-accent">Merwin</span>
             </div>
-
             <div class="nav-links">
                 <a href="../index.html">Home</a>
                 <a href="../index.html#projects">Projects</a>
             </div>
-
         </nav>
     </header>
 
-    <section class="project-header">
+    <!-- Main Container to align layout with CSS grid -->
+    <main class="container project-page">
 
-        <h1>
-            Linguify
-        </h1>
-
-        <p class="hero-subtitle">
-            AI-powered multilingual document translation platform
-        </p>
-
-    </section>
-
-    <section class="project-content">
-
-        <div class="project-section">
-
-            <h2>
-                The Challenge
-            </h2>
-
-            <p>
-                Organizations operating across multiple languages often rely on manual
-                translation workflows that slow collaboration, delay decision-making, and
-                increase operational costs. Linguify streamlines this process by automating
-                document translation while preserving context, formatting, and accuracy.
+        <!-- Hero Header -->
+        <section class="project-header">
+            <div class="badge">Natural Language Processing</div>
+            <h1>
+                Linguify <span class="text-gradient">Document Translation</span>
+            </h1>
+            <p class="hero-subtitle">
+                AI-powered multilingual document translation platform
             </p>
+        </section>
 
-        </div>
+        <!-- Project Body Content -->
+        <section class="project-content">
 
-        <div class="project-section highlight">
-
-            <h2>
-                Impact
-            </h2>
-
-            <p>
-                Reduced document translation turnaround from <strong>3–4 days</strong> to
-                <strong>under 2 minutes</strong> through an AI-powered multilingual workflow,
-                enabling faster communication across global teams.
-            </p>
-
-        </div>
-
-        <div class="project-section">
-
-            <h2>
-                Workflow Overview
-            </h2>
-
-            <img src="../images/projects/linguify-impact-overview.png" alt="Linguify workflow overview">
-
-            <p>
-                Linguify automatically detects document language, translates content using
-                advanced language models, validates output quality, and delivers polished,
-                multilingual documents ready for business use.
-            </p>
-
-        </div>
-
-        <div class="project-section">
-
-            <h2>
-                Key Features
-            </h2>
-
-            <div class="feature-grid">
-
-                <div class="feature-card">
-
-                    <h3>
-                        Context-Aware Translation
-                    </h3>
-
-                    <p>
-                        Maintains document meaning, tone, and formatting while generating accurate
-                        translations across multiple languages.
-                    </p>
-
-                </div>
-
-                <div class="feature-card">
-
-                    <h3>
-                        Rapid Processing
-                    </h3>
-
-                    <p>
-                        Automates complex translation workflows to reduce turnaround from days to
-                        minutes without sacrificing quality.
-                    </p>
-
-                </div>
-
-                <div class="feature-card">
-
-                    <h3>
-                        Enterprise Ready
-                    </h3>
-
-                    <p>
-                        Designed for secure, scalable document translation suitable for organizations
-                        operating across international teams.
-                    </p>
-
-                </div>
-
+            <div class="project-section">
+                <h2>The Challenge</h2>
+                <p>
+                    Organizations operating across multiple languages often rely on manual
+                    translation workflows that slow collaboration, delay decision-making, and
+                    increase operational costs. Linguify streamlines this process by automating
+                    document translation while preserving context, formatting, and accuracy.
+                </p>
             </div>
 
-        </div>
+            <!-- Standout Callout Styling for Impact -->
+            <div class="project-section highlight-card">
+                <h2>⚡ Impact</h2>
+                <p>
+                    Reduced document translation turnaround from <strong>3–4 days</strong> to
+                    <strong>under 2 minutes</strong> through an AI-powered multilingual workflow,
+                    enabling faster communication across global teams.
+                </p>
+            </div>
 
-        <div class="project-section">
+            <div class="project-section">
+                <h2>Workflow Overview</h2>
+                <div class="img-wrapper">
+                    <img src="../images/projects/linguify-impact-overview.png" alt="Linguify workflow overview">
+                </div>
+                <p>
+                    Linguify automatically detects document language, translates content using
+                    advanced language models, validates output quality, and delivers polished,
+                    multilingual documents ready for business use.
+                </p>
+            </div>
 
-            <h2>
-                Technical Architecture
-            </h2>
+            <div class="project-section">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Context-Aware Translation</h3>
+                        <p>
+                            Maintains document meaning, tone, and formatting while generating accurate
+                            translations across multiple languages.
+                        </p>
+                    </div>
 
-            <img src="../images/projects/linguify-architecture-technical.png"
-                alt="Linguify technical architecture diagram">
+                    <div class="feature-card">
+                        <h3>Rapid Processing</h3>
+                        <p>
+                            Automates complex translation workflows to reduce turnaround from days to
+                            minutes without sacrificing quality.
+                        </p>
+                    </div>
 
-            <p>
-                The platform combines document processing, language detection, large language
-                models, validation, and cloud infrastructure into a scalable pipeline capable
-                of handling multilingual enterprise workflows.
-            </p>
+                    <div class="feature-card">
+                        <h3>Enterprise Ready</h3>
+                        <p>
+                            Designed for secure, scalable document translation suitable for organizations
+                            operating across international teams.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-        </div>
+            <div class="project-section">
+                <h2>Technical Architecture</h2>
+                <div class="img-wrapper">
+                    <img src="../images/projects/linguify-architecture-technical.png"
+                        alt="Linguify technical architecture diagram">
+                </div>
+                <p>
+                    The platform combines document processing, language detection, large language
+                    models, validation, and cloud infrastructure into a scalable pipeline capable
+                    of handling multilingual enterprise workflows.
+                </p>
+            </div>
 
-        <div class="project-section">
+            <!-- Styled Tech Pills -->
+            <div class="project-section">
+                <h2>Technology Stack</h2>
+                <div class="tech-pills">
+                    <span>Claude</span>
+                    <span>GPT APIs</span>
+                    <span>Python</span>
+                    <span>Document Processing</span>
+                    <span>AWS</span>
+                </div>
+            </div>
 
-            <h2>
-                Technology Stack
-            </h2>
+            <div class="project-section">
+                <h2>Demonstration Access</h2>
+                <p>
+                    The application relies on commercial LLM APIs and cloud infrastructure. Demonstrations are available
+                    through controlled
+                    access to manage operational costs while showcasing the complete workflow. </p>
+            </div>
 
-            <p class="tech-list">
-                Claude • GPT APIs • Python • Document Processing • AWS
-            </p>
+            <!-- Centered Back Button -->
+            <div class="action-footer">
+                <a class="button primary" href="../index.html">
+                    Back to Portfolio
+                </a>
+            </div>
 
-        </div>
-
-        <div class="project-section">
-
-            <h2>
-                Demo Access
-            </h2>
-
-            <p>
-                The live application relies on commercial LLM APIs and cloud resources.
-                Demonstrations are provided in a controlled environment to manage operational
-                costs while showcasing the complete workflow.
-            </p>
-
-        </div>
-
-        <a class="button primary" href="../index.html">
-            Back to Portfolio
-        </a>
-
-    </section>
+        </section>
+    </main>
 
     <footer>
-
-        <p>
-            © 2026 John Merwin
-        </p>
-
+        <p>© 2026 John Merwin</p>
     </footer>
 
 </body>

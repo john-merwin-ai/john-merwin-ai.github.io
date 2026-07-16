@@ -7,6 +7,8 @@
     <title>EssayLens | AI Essay Analysis Platform</title>
     <meta name="description"
         content="EssayLens is an AI-powered essay analysis platform that provides rubric-based feedback, writing insights, and personalized recommendations for students and educators.">
+    <!-- Inter Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -14,204 +16,155 @@
 
     <header>
         <nav class="navbar">
-
             <div class="logo">
-                John Merwin
+                John <span class="logo-accent">Merwin</span>
             </div>
-
             <div class="nav-links">
                 <a href="../index.html">Home</a>
                 <a href="../index.html#projects">Projects</a>
             </div>
-
         </nav>
     </header>
 
-    <section class="project-header">
+    <!-- Main Container to align layout with portfolio detail styles -->
+    <main class="container project-page">
 
-        <h1>
-            EssayLens
-        </h1>
-
-        <p class="hero-subtitle">
-            AI-powered essay analysis and writing feedback platform
-        </p>
-
-    </section>
-
-    <section class="project-content">
-
-        <div class="project-section">
-
-            <h2>
-                The Challenge
-            </h2>
-
-            <p>
-                Providing meaningful feedback on student writing is one of the most
-                time-intensive responsibilities for educators. Consistent grading,
-                constructive comments, and individualized recommendations require significant
-                effort, making it difficult to deliver timely feedback for every student.
+        <!-- Hero Header -->
+        <section class="project-header">
+            <div class="badge">EdTech & NLP</div>
+            <h1>
+                EssayLens <span class="text-gradient">Essay Analysis</span>
+            </h1>
+            <p class="hero-subtitle">
+                AI-powered essay analysis and writing feedback platform
             </p>
+        </section>
 
-        </div>
+        <!-- Project Body Content -->
+        <section class="project-content">
 
-        <div class="project-section highlight">
-
-            <h2>
-                Solution
-            </h2>
-
-            <p>
-                EssayLens analyzes student essays using AI and evaluates writing against
-                well-defined assessment rubrics. The platform generates detailed feedback,
-                highlights strengths and areas for improvement, and provides actionable
-                recommendations that help students become stronger writers while supporting
-                educators in their evaluation process.
-            </p>
-
-        </div>
-
-        <div class="project-section">
-
-            <h2>
-                Workflow Overview
-            </h2>
-
-            <img src="../images/projects/essaylens-workflow-overview.png" alt="EssayLens workflow overview">
-
-            <p>
-                Students upload an essay, which is analyzed by large language models using
-                structured evaluation criteria. EssayLens assesses writing quality, identifies
-                opportunities for improvement, and returns personalized feedback alongside
-                rubric-based scoring.
-            </p>
-
-        </div>
-
-        <div class="project-section">
-
-            <h2>
-                Key Features
-            </h2>
-
-            <div class="feature-grid">
-
-                <div class="feature-card">
-
-                    <h3>
-                        Rubric-Based Evaluation
-                    </h3>
-
-                    <p>
-                        Evaluation rubrics were developed using guidance and grading criteria provided
-                        by experienced teachers who regularly assess student essays, helping produce
-                        feedback that aligns with real classroom expectations.
-                    </p>
-
-                </div>
-
-                <div class="feature-card">
-
-                    <h3>
-                        Personalized AI Feedback
-                    </h3>
-
-                    <p>
-                        Provides detailed recommendations on grammar, organization, clarity, evidence,
-                        and writing style to help students understand how to improve future drafts.
-                    </p>
-
-                </div>
-
-                <div class="feature-card">
-
-                    <h3>
-                        Adaptable Assessment
-                    </h3>
-
-                    <p>
-                        The current implementation is optimized for high school essays. By replacing or
-                        expanding the evaluation rubrics, the platform can be adapted to support
-                        college- and university-level writing standards.
-                    </p>
-
-                </div>
-
+            <div class="project-section">
+                <h2>The Challenge</h2>
+                <p>
+                    Providing meaningful feedback on student writing is one of the most
+                    time-intensive responsibilities for educators. Consistent grading,
+                    constructive comments, and individualized recommendations require significant
+                    effort, making it difficult to deliver timely feedback for every student.
+                </p>
             </div>
 
-        </div>
+            <!-- Standout Callout Styling for the Solution -->
+            <div class="project-section highlight-card">
+                <h2>⚡ Solution</h2>
+                <p>
+                    EssayLens analyzes student essays using AI and evaluates writing against
+                    well-defined assessment rubrics. The platform generates detailed feedback,
+                    highlights strengths and areas for improvement, and provides actionable
+                    recommendations that help students become stronger writers while supporting
+                    educators in their evaluation process.
+                </p>
+            </div>
 
-        <div class="project-section">
+            <div class="project-section">
+                <h2>Workflow Overview</h2>
+                <div class="img-wrapper">
+                    <img src="../images/projects/essaylens-workflow-overview.png" alt="EssayLens workflow overview">
+                </div>
+                <p>
+                    Students upload an essay, which is analyzed by large language models using
+                    structured evaluation criteria. EssayLens assesses writing quality, identifies
+                    opportunities for improvement, and returns personalized feedback alongside
+                    rubric-based scoring.
+                </p>
+            </div>
 
-            <h2>
-                Technical Architecture
-            </h2>
+            <div class="project-section">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Rubric-Based Evaluation</h3>
+                        <p>
+                            Evaluation rubrics were developed using guidance and grading criteria provided
+                            by experienced teachers who regularly assess student essays, helping produce
+                            feedback that aligns with real classroom expectations.
+                        </p>
+                    </div>
 
-            <img src="../images/projects/essaylens-architecture-technical.png" alt="EssayLens technical architecture">
+                    <div class="feature-card">
+                        <h3>Personalized AI Feedback</h3>
+                        <p>
+                            Provides detailed recommendations on grammar, organization, clarity, evidence,
+                            and writing style to help students understand how to improve future drafts.
+                        </p>
+                    </div>
 
-            <p>
-                The platform combines document processing, prompt engineering, rubric-driven
-                evaluation, large language models, and cloud infrastructure to produce
-                consistent essay analysis and structured feedback in seconds.
-            </p>
+                    <div class="feature-card">
+                        <h3>Adaptable Assessment</h3>
+                        <p>
+                            The current implementation is optimized for high school essays. By replacing or
+                            expanding the evaluation rubrics, the platform can be adapted to support
+                            college- and university-level writing standards.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-        </div>
+            <div class="project-section">
+                <h2>Technical Architecture</h2>
+                <div class="img-wrapper">
+                    <img src="../images/projects/essaylens-architecture-technical.png"
+                        alt="EssayLens technical architecture">
+                </div>
+                <p>
+                    The platform combines document processing, prompt engineering, rubric-driven
+                    evaluation, large language models, and cloud infrastructure to produce
+                    consistent essay analysis and structured feedback in seconds.
+                </p>
+            </div>
 
-        <div class="project-section">
+            <!-- Styled Tech Pills -->
+            <div class="project-section">
+                <h2>Technology Stack</h2>
+                <div class="tech-pills">
+                    <span>Claude</span>
+                    <span>GPT APIs</span>
+                    <span>Python</span>
+                    <span>Prompt Engineering</span>
+                    <span>AWS</span>
+                </div>
+            </div>
 
-            <h2>
-                Technology Stack
-            </h2>
+            <div class="project-section">
+                <h2>Educational Design</h2>
+                <p>
+                    Unlike generic AI writing assistants, EssayLens evaluates essays using
+                    structured rubrics inspired by real educator practices. Because the assessment
+                    criteria are configurable, institutions can tailor the platform to different
+                    grade levels, curricula, or academic disciplines without changing the core AI
+                    workflow.
+                </p>
+            </div>
 
-            <p class="tech-list">
-                Claude • GPT APIs • Python • Prompt Engineering • AWS
-            </p>
+            <div class="project-section">
+                <h2>Demonstration Access</h2>
+                <p>
+                    The application relies on commercial LLM APIs and cloud infrastructure. Demonstrations are available
+                    through controlled
+                    access to manage operational costs while showcasing the complete workflow. </p>
+            </div>
 
-        </div>
+            <!-- Centered Back Button -->
+            <div class="action-footer">
+                <a class="button primary" href="../index.html">
+                    Back to Portfolio
+                </a>
+            </div>
 
-        <div class="project-section">
-
-            <h2>
-                Educational Design
-            </h2>
-
-            <p>
-                Unlike generic AI writing assistants, EssayLens evaluates essays using
-                structured rubrics inspired by real educator practices. Because the assessment
-                criteria are configurable, institutions can tailor the platform to different
-                grade levels, curricula, or academic disciplines without changing the core AI
-                workflow.
-            </p>
-
-        </div>
-
-        <div class="project-section">
-
-            <h2>
-                Demo Access
-            </h2>
-
-            <p>
-                The live demonstration uses commercial large language model APIs and is
-                available in a controlled environment to manage operational costs while
-                demonstrating the platform's full capabilities.
-            </p>
-
-        </div>
-
-        <a class="button primary" href="../index.html">
-            Back to Portfolio
-        </a>
-
-    </section>
+        </section>
+    </main>
 
     <footer>
-
-        <p>
-            © 2026 John Merwin
-        </p>
-
+        <p>© 2026 John Merwin</p>
     </footer>
 
 </body>

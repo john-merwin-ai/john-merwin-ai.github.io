@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek-7B LoRA Fine-Tuning | LLM Customization Project</title>
+    <meta name="description"
+        content="DeepSeek-7B LoRA fine-tuning project demonstrating parameter-efficient LLM customization using distributed GPU training, PyTorch, PEFT, and Hugging Face technologies.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                John Merwin
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#projects">Projects</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="project-header">
+        <h1>
+            DeepSeek-7B LoRA Fine-Tuning
+        </h1>
+        <p class="hero-subtitle">
+            Parameter-efficient LLM customization using distributed GPU training
+        </p>
+    </section>
+
+    <section class="project-content">
+        <div class="project-section">
+            <h2>
+                The Challenge
+            </h2>
+            <p>
+                Large language models contain billions of parameters and require significant
+                computational resources to customize. Traditional full-model fine-tuning is
+                expensive, memory-intensive, and difficult to scale. The challenge was to
+                adapt a powerful foundation model efficiently while maintaining high training
+                performance on available GPU infrastructure.
+            </p>
+        </div>
+
+        <div class="project-section highlight">
+            <h2>
+                Impact
+            </h2>
+            <p>
+                Successfully fine-tuned <strong>DeepSeek-7B-Chat</strong> using
+                <strong>LoRA (Low-Rank Adaptation)</strong> and
+                <strong>PEFT (Parameter-Efficient Fine-Tuning)</strong>, creating a
+                specialized model adaptation while significantly reducing memory requirements
+                compared with full-parameter training.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>
+                Workflow Overview
+            </h2>
+            <img src="../images/projects/lora-finetuning-overview.png" alt="DeepSeek-7B LoRA fine-tuning overview">
+            <p>
+                The process transforms a general-purpose language model into a specialized
+                AI system by training lightweight adapter layers on instruction data. Instead
+                of modifying billions of base model parameters, LoRA learns targeted
+                adjustments that guide the model toward desired behaviors.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>
+                Key Features
+            </h2>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>
+                        Efficient Model Adaptation
+                    </h3>
+                    <p>
+                        LoRA enables fine-tuning by training small adapter modules while keeping the
+                        majority of the original model parameters frozen, reducing computational cost
+                        and memory usage.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>
+                        Distributed GPU Training
+                    </h3>
+                    <p>
+                        Configured multi-GPU training across dual NVIDIA A100 80GB GPUs using
+                        PyTorch Distributed Data Parallel (DDP) to accelerate training workloads.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>
+                        Performance Optimization
+                    </h3>
+                    <p>
+                        Applied BF16 precision and TF32 acceleration techniques to improve GPU
+                        utilization, training efficiency, and VRAM management.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>
+                Technical Architecture
+            </h2>
+            <img src="../images/projects/lora-finetuning-architecture-technical.png"
+                alt="DeepSeek-7B LoRA fine-tuning technical architecture">
+            <p>
+                The training pipeline combines instruction data processing, Hugging Face
+                Transformers, PEFT-based LoRA adapters, and distributed PyTorch training.
+                The architecture uses synchronized GPU workers to efficiently train the model
+                while managing memory constraints across the distributed environment.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>
+                Engineering Highlights
+            </h2>
+            <p>
+                The project required resolving device-mapping conflicts between Accelerate
+                hooks and multi-process PyTorch DDP training. Careful configuration of training
+                processes, precision settings, and GPU allocation enabled stable distributed
+                fine-tuning across multiple A100 GPUs.
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>
+                Technology Stack
+            </h2>
+            <p class="tech-list">
+                PyTorch 2.6 • Hugging Face Transformers • PEFT • LoRA • PyTorch DDP •
+                Accelerate • NVIDIA A100 80GB • Thunder Compute
+            </p>
+        </div>
+
+        <div class="project-section">
+            <h2>
+                Demo Access
+            </h2>
+            <p>
+                The fine-tuned model requires significant GPU resources for training and
+                inference. A controlled demonstration environment is available to showcase
+                the training pipeline, architecture, and resulting model capabilities.
+            </p>
+        </div>
+
+        <a class="button primary" href="../index.html">
+            Back to Portfolio
+        </a>
+    </section>
+
+    <footer>
+        <p>
+            © 2026 John Merwin
+        </p>
+    </footer>
+</body>
+
+</html>

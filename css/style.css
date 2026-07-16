@@ -1,0 +1,163 @@
+/* Global */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    color: #1f2937;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navigation */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+/* Hero */
+
+.hero {
+    padding: 90px 8%;
+    background: #f8fafc;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #111827;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #374151;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+}
+
+/* Buttons */
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin-right: 12px;
+    font-weight: 600;
+}
+
+.primary {
+    background: #2563eb;
+    color: white;
+}
+
+.secondary {
+    border: 1px solid #2563eb;
+    color: #2563eb;
+}
+
+/* Sections */
+
+.section {
+    padding: 70px 8%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #111827;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.technology {
+    color: #2563eb;
+    font-size: 0.9rem;
+}
+
+/* Skills */
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Impact */
+
+.impact {
+    background: #eff6ff;
+    border-radius: 12px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #e5e7eb;
+    color: #6b7280;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+}

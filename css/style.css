@@ -161,3 +161,41 @@ footer {
         font-size: 2.2rem;
     }
 }
+
+/* Project Pages */
+.project-header {
+    background: #f8fafc;
+    padding: 70px 8%;
+}
+
+.project-content {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 8%;
+}
+
+.project-content img {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    margin: 25px 0;
+}
+
+.project-section {
+    margin-bottom: 50px;
+}
+
+.project-section h2 {
+    margin-bottom: 15px;
+}
+
+.highlight {
+    background: #eff6ff;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.tech-list {
+    color: #2563eb;
+    font-weight: 500;
+}

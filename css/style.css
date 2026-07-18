@@ -141,7 +141,11 @@ header {
 
 .text-gradient {
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+
+    background-clip: text;
     -webkit-background-clip: text;
+
+    color: transparent;
     -webkit-text-fill-color: transparent;
 }
 
@@ -621,4 +625,9 @@ footer {
     .project-content {
         gap: 2.5rem;
     }
+}
+
+/* Resume page spacing */
+.resume-page .section {
+    padding: 45px 0;
 }

@@ -55,7 +55,8 @@
             </h1>
 
             <p class="hero-subtitle">
-                AI-powered retrieval-augmented generation platform for machine learning education
+                A production RAG pipeline built on deterministic routing, a measured reranking layer,
+                and an empirically calibrated confidence threshold — evaluated with RAGAS, not assumed to work
             </p>
 
         </section>
@@ -87,11 +88,13 @@
                 </h2>
 
                 <p>
-                    ML Research Assistant combines retrieval-augmented generation (RAG),
-                    multi-agent orchestration, semantic search, and citation enforcement to answer
-                    machine learning questions using authoritative textbook content. When the local
-                    knowledge base cannot answer a question, a secondary research agent performs
-                    controlled web research to supplement the response.
+                    ML Research Assistant combines retrieval-augmented generation (RAG), a
+                    pre-retrieval scope guard, Cohere reranking, and citation enforcement to answer
+                    machine learning questions using authoritative textbook content. Rather than
+                    relying on an LLM's self-reported confidence, an explicit similarity threshold —
+                    empirically calibrated against known in-scope and out-of-scope queries — decides
+                    whether a question is answered from the textbooks or routed to a secondary
+                    research agent for controlled web fallback.
                 </p>
 
             </div>
@@ -104,16 +107,18 @@
                 </h2>
 
                 <div class="img-wrapper">
-                    <img src="../images/projects/rag-workflow-overview.png" alt="ML Research Assistant workflow overview">
+                    <img src="../images/projects/rag-workflow-overview.svg" alt="ML Research Assistant workflow overview">
                 </div>
 
                 <p>
-                    User questions are first matched against an indexed machine learning textbook
-                    stored in a vector database. Relevant passages are retrieved through semantic
-                    search and supplied to the language model to generate grounded responses with
-                    citations. If no relevant material is found, a specialized research agent
-                    retrieves additional information from trusted online sources before preparing
-                    the final answer.
+                    A user question first passes through a scope guard, which rejects anything
+                    outside AI, ML, and data science before any retrieval happens. In-scope
+                    questions are matched against an indexed knowledge base using semantic search,
+                    then rescored by a Cohere reranker. The reranked score is checked against a
+                    calibrated confidence threshold: at or above it, the passages are supplied to
+                    the language model to generate a grounded, citation-backed response; below it,
+                    a specialized research agent retrieves supplementary information from the web
+                    instead of stretching unrelated textbook content to fit.
                 </p>
 
             </div>
@@ -130,13 +135,29 @@
                     <div class="feature-card">
 
                         <h3>
-                            Grounded Retrieval
+                            Deterministic Routing
                         </h3>
 
                         <p>
-                            Answers are generated from indexed textbook content whenever relevant
-                            information exists, reducing reliance on model memory and improving
-                            factual consistency.
+                            A pre-retrieval scope guard rejects off-topic questions before any
+                            search runs, and a calibrated numeric threshold — not an LLM's
+                            self-reported judgment — decides whether a question is answered from
+                            the textbooks or routed to web fallback.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-card">
+
+                        <h3>
+                            Measured Reranking
+                        </h3>
+
+                        <p>
+                            A Cohere reranking layer's actual impact was evaluated with RAGAS across
+                            independent multi-run comparisons rather than assumed — surfacing that
+                            its benefit is corpus-dependent, not guaranteed, and shipping it as a
+                            re-testable toggle rather than a fixed assumption.
                         </p>
 
                     </div>
@@ -162,9 +183,60 @@
                         </h3>
 
                         <p>
-                            When the knowledge base cannot answer a question, a dedicated research
-                            agent performs web searches and synthesizes information before
-                            presenting the final response.
+                            When retrieval confidence falls below the calibrated threshold, a
+                            dedicated research agent performs web searches and synthesizes
+                            information before presenting the final response.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-section">
+
+                <h2>
+                    Evaluation & Calibration
+                </h2>
+
+                <p>
+                    Every architectural claim in this project was treated as a hypothesis to test,
+                    not an assumption to ship on. A 16-question golden dataset and a standalone
+                    RAGAS evaluation harness (Faithfulness, Context Recall, Factual Correctness)
+                    were used to measure real answer quality rather than trust intuition.
+                </p>
+
+                <div class="feature-grid">
+
+                    <div class="feature-card">
+
+                        <h3>
+                            Reranker: Tested, Not Assumed
+                        </h3>
+
+                        <p>
+                            Across three independent runs per condition, the Cohere reranker showed
+                            a measurable ~7-point Factual Correctness improvement on a noisier
+                            source corpus, but no meaningful benefit on a cleaner, better-curated
+                            one — confirming that reranking value depends on how much the baseline
+                            retrieval is already struggling, not a universal given.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-card">
+
+                        <h3>
+                            Threshold Calibrated on Evidence
+                        </h3>
+
+                        <p>
+                            The confidence threshold gating textbook vs. web-fallback routing was
+                            calibrated by scoring known in-scope and out-of-scope questions through
+                            the production retrieval path, confirming a clean separation between
+                            the two groups and a defensible margin around the chosen cutoff.
                         </p>
 
                     </div>
@@ -182,17 +254,18 @@
 
                 <div class="img-wrapper">
 
-                    <img src="../images/projects/rag-architecture-technical.png"
+                    <img src="../images/projects/rag-architecture-technical.svg"
                         alt="ML Research Assistant technical architecture">
 
                 </div>
 
                 <p>
                     The architecture integrates Streamlit, Agno AI agents, embedding generation,
-                    PostgreSQL with pgvector, semantic similarity search, and LLM-based response
-                    generation. Role-based agent orchestration coordinates retrieval, citation
-                    validation, and fallback web research to deliver accurate, context-aware
-                    responses.
+                    PostgreSQL with pgvector (hosted on Neon), Cohere reranking, and LLM-based
+                    response generation. Role-based agent orchestration coordinates scope
+                    classification, retrieval, reranking, citation validation, and fallback web
+                    research, with a standalone RAGAS harness used to evaluate answer quality
+                    outside the live application.
                 </p>
 
             </div>
@@ -211,7 +284,10 @@
                     <span>Streamlit</span>
                     <span>PostgreSQL</span>
                     <span>pgvector</span>
+                    <span>Neon</span>
                     <span>OpenAI Embeddings</span>
+                    <span>Cohere Rerank</span>
+                    <span>RAGAS</span>
                     <span>RAG</span>
                     <span>Multi-Agent AI</span>
 
@@ -227,11 +303,16 @@
                 </h2>
 
                 <p>
-                    The current implementation indexes a foundational machine learning textbook to
-                    support introductory topics. The architecture is designed to scale by adding
-                    additional textbooks covering deep learning, large language models, statistics,
-                    reinforcement learning, and other AI disciplines, creating a comprehensive
-                    educational knowledge platform.
+                    The current implementation indexes an introductory ML textbook alongside
+                    excerpts from a large language model engineering text, with a source swap
+                    already completed once — including re-chunking, golden dataset rework, and
+                    re-calibration — validating that the architecture holds up under real content
+                    changes, not just its original corpus. Near-term scaling means adding coverage
+                    for deep learning, reinforcement learning, and other AI disciplines; scaling
+                    further, toward larger institutional or organizational document repositories,
+                    would require metadata filtering, hybrid keyword-plus-vector search, and a much
+                    larger stratified evaluation set — with data governance and access control as
+                    the first real blocker, ahead of any retrieval engineering.
                 </p>
 
             </div>

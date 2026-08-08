@@ -1,0 +1,148 @@
+<svg width="1400" height="780" viewBox="0 0 1400 780" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>ML Research Assistant workflow — corrected with scope check, reranking, and calibrated confidence routing</title>
+<desc>Step-by-step workflow showing a question passing through a scope check, search and reranking, a calibrated confidence check, then either a grounded answer or web research, converging on a final response.</desc>
+<defs>
+  <marker id="arrowL" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="#3B6FD1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<rect x="0" y="0" width="1400" height="780" fill="#EAF1FB"/>
+
+<text x="700" y="55" font-family="Arial, sans-serif" font-size="32" font-weight="800" text-anchor="middle" fill="#173A6B">ML Research Assistant</text>
+<text x="700" y="85" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#4C6488">AI-Powered RAG Pipeline with Deterministic Routing &amp; Calibrated Confidence</text>
+
+<!-- ================= MAIN ROW ================= -->
+<!-- Step 1: Ask a question -->
+<rect x="40" y="140" width="230" height="170" rx="12" fill="#FFFFFF" stroke="#C6D6EE" stroke-width="1.4"/>
+<circle cx="155" cy="195" r="30" fill="#EAF1FB" stroke="#3B6FD1" stroke-width="1.6"/>
+<text x="155" y="201" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#3B6FD1">?</text>
+<text x="155" y="250" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#173A6B">Ask a Question</text>
+<text x="155" y="272" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#5B7191">
+  <tspan x="155" dy="0">"What is overfitting?"</tspan>
+</text>
+
+<line x1="270" y1="220" x2="300" y2="220" stroke="#3B6FD1" stroke-width="2" marker-end="url(#arrowL)"/>
+
+<!-- Step 2: Scope check (NEW) -->
+<rect x="305" y="140" width="230" height="170" rx="12" fill="#FFFFFF" stroke="#C6D6EE" stroke-width="1.4"/>
+<circle cx="420" cy="195" r="30" fill="#EAF1FB" stroke="#2FA36B" stroke-width="1.6"/>
+<path d="M408 195 L417 204 L433 184" fill="none" stroke="#2FA36B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="420" y="250" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#173A6B">Check Topic Scope</text>
+<text x="420" y="270" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#5B7191">
+  <tspan x="420" dy="0">Confirms this is an</tspan>
+  <tspan x="420" dy="15">AI/ML question first</tspan>
+</text>
+
+<line x1="535" y1="220" x2="565" y2="220" stroke="#3B6FD1" stroke-width="2" marker-end="url(#arrowL)"/>
+
+<!-- Step 3: Search & Rerank (merged) -->
+<rect x="570" y="140" width="230" height="170" rx="12" fill="#FFFFFF" stroke="#C6D6EE" stroke-width="1.4"/>
+<circle cx="685" cy="195" r="30" fill="#EAF1FB" stroke="#3B6FD1" stroke-width="1.6"/>
+<path d="M676 195 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M691 201 L699 209" fill="none" stroke="#3B6FD1" stroke-width="2.2" stroke-linecap="round"/>
+<text x="685" y="250" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#173A6B">Search &amp; Rerank</text>
+<text x="685" y="270" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#5B7191">
+  <tspan x="685" dy="0">Vector search, then</tspan>
+  <tspan x="685" dy="15">Cohere reranks results</tspan>
+</text>
+
+<line x1="800" y1="220" x2="830" y2="220" stroke="#3B6FD1" stroke-width="2" marker-end="url(#arrowL)"/>
+
+<!-- Step 4: Confidence check (decision, FIXED) -->
+<rect x="835" y="140" width="230" height="170" rx="12" fill="#FFFFFF" stroke="#C6D6EE" stroke-width="1.4"/>
+<rect x="655" y="170" width="60" height="60" transform="translate(200,0) rotate(45 685 195)" fill="#EAF1FB" stroke="#D98A2B" stroke-width="1.6"/>
+<text x="950" y="201" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#D98A2B">&#8805; 0.3?</text>
+<text x="950" y="250" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#173A6B">Confidence Check</text>
+<text x="950" y="270" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#5B7191">
+  <tspan x="950" dy="0">Calibrated threshold,</tspan>
+  <tspan x="950" dy="15">not a found/not-found guess</tspan>
+</text>
+
+<!-- Branch YES (up) -->
+<path d="M1065 195 L1100 195 L1100 130 L1140 130" fill="none" stroke="#2FA36B" stroke-width="2" marker-end="url(#arrowL)"/>
+<text x="1100" y="118" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#2FA36B">YES</text>
+
+<!-- Branch NO (down) -->
+<path d="M1065 195 L1100 195 L1100 300 L1140 300" fill="none" stroke="#B0562C" stroke-width="2" marker-end="url(#arrowL)"/>
+<text x="1100" y="317" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#B0562C">NO</text>
+
+<!-- Step 5a: Grounded Answer -->
+<rect x="1145" y="55" width="215" height="150" rx="12" fill="#FFFFFF" stroke="#2FA36B" stroke-width="1.6"/>
+<circle cx="1252" cy="105" r="26" fill="#EAF1FB" stroke="#2FA36B" stroke-width="1.6"/>
+<path d="M1242 105 L1249 112 L1263 94" fill="none" stroke="#2FA36B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1252" y="152" font-family="Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#173A6B">Grounded Answer</text>
+<text x="1252" y="172" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#5B7191">
+  <tspan x="1252" dy="0">Textbook passages,</tspan>
+  <tspan x="1252" dy="14">cited by page</tspan>
+</text>
+
+<!-- Step 5b: Research the Web -->
+<rect x="1145" y="250" width="215" height="150" rx="12" fill="#FFFFFF" stroke="#B0562C" stroke-width="1.6"/>
+<circle cx="1252" cy="300" r="26" fill="#EAF1FB" stroke="#B0562C" stroke-width="1.6"/>
+<ellipse cx="1252" cy="300" rx="16" ry="16" fill="none" stroke="#B0562C" stroke-width="1.6"/>
+<line x1="1236" y1="300" x2="1268" y2="300" stroke="#B0562C" stroke-width="1.4"/>
+<path d="M1252 284 A16 16 0 0 1 1252 316" fill="none" stroke="#B0562C" stroke-width="1.4"/>
+<text x="1252" y="347" font-family="Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#173A6B">Research the Web</text>
+<text x="1252" y="367" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#5B7191">
+  <tspan x="1252" dy="0">Below threshold —</tspan>
+  <tspan x="1252" dy="14">live search instead</tspan>
+</text>
+
+<!-- Convergence to Final Response -->
+<path d="M1252 205 L1252 220 L1252 228" fill="none" stroke="#2FA36B" stroke-width="2"/>
+<path d="M1252 400 L1252 460" fill="none" stroke="#B0562C" stroke-width="2"/>
+
+<!-- Step 6: Final Response, centered below, spans full width -->
+<rect x="470" y="460" width="460" height="150" rx="12" fill="#FFFFFF" stroke="#3B6FD1" stroke-width="1.8"/>
+<circle cx="700" cy="510" r="28" fill="#EAF1FB" stroke="#3B6FD1" stroke-width="1.6"/>
+<path d="M690 505 L700 515 L716 494" fill="none" stroke="#3B6FD1" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="700" y="560" font-family="Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#173A6B">Final Response</text>
+<text x="700" y="583" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#5B7191">
+  <tspan x="700" dy="0">Answer, source citations, and context — routed by a calibrated score, not a guess</tspan>
+</text>
+
+<path d="M1145 130 L950 130 L800 460" fill="none" stroke="#2FA36B" stroke-width="1.6" stroke-dasharray="4,3" marker-end="url(#arrowL)"/>
+<path d="M1145 320 L950 460" fill="none" stroke="#B0562C" stroke-width="1.6" stroke-dasharray="4,3" marker-end="url(#arrowL)"/>
+
+<!-- ================= BOTTOM CALLOUTS ================= -->
+<rect x="40" y="655" width="260" height="90" rx="10" fill="#FFFFFF" stroke="#C6D6EE" stroke-width="1.2"/>
+<text x="60" y="682" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#173A6B">Grounded Answers</text>
+<text x="60" y="702" font-family="Arial, sans-serif" font-size="10.5" fill="#5B7191">
+  <tspan x="60" dy="0">Responses cite source text</tspan>
+  <tspan x="60" dy="14">whenever confidence clears</tspan>
+  <tspan x="60" dy="14">the calibrated threshold</tspan>
+</text>
+
+<rect x="315" y="655" width="260" height="90" rx="10" fill="#FFFFFF" stroke="#C6D6EE" stroke-width="1.2"/>
+<text x="335" y="682" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#173A6B">Citation-Based Learning</text>
+<text x="335" y="702" font-family="Arial, sans-serif" font-size="10.5" fill="#5B7191">
+  <tspan x="335" dy="0">Every textbook-derived</tspan>
+  <tspan x="335" dy="14">response includes a source</tspan>
+  <tspan x="335" dy="14">page citation</tspan>
+</text>
+
+<rect x="590" y="655" width="260" height="90" rx="10" fill="#FFFFFF" stroke="#C6D6EE" stroke-width="1.2"/>
+<text x="610" y="682" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#173A6B">2 Curated Source Texts</text>
+<text x="610" y="702" font-family="Arial, sans-serif" font-size="10.5" fill="#5B7191">
+  <tspan x="610" dy="0">Intro ML textbook +</tspan>
+  <tspan x="610" dy="14">"AI Engineering" excerpts,</tspan>
+  <tspan x="610" dy="14">vector + rerank retrieval</tspan>
+</text>
+
+<rect x="865" y="655" width="255" height="90" rx="10" fill="#FFFFFF" stroke="#C6D6EE" stroke-width="1.2"/>
+<text x="885" y="682" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#173A6B">Reduced Hallucinations</text>
+<text x="885" y="702" font-family="Arial, sans-serif" font-size="10.5" fill="#5B7191">
+  <tspan x="885" dy="0">Calibrated confidence</tspan>
+  <tspan x="885" dy="14">threshold, not free-text</tspan>
+  <tspan x="885" dy="14">self-judgment, gates answers</tspan>
+</text>
+
+<rect x="1135" y="655" width="225" height="90" rx="10" fill="#FFFFFF" stroke="#C6D6EE" stroke-width="1.2"/>
+<text x="1155" y="682" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#173A6B">Intelligent Web Research</text>
+<text x="1155" y="702" font-family="Arial, sans-serif" font-size="10.5" fill="#5B7191">
+  <tspan x="1155" dy="0">Searches the web only</tspan>
+  <tspan x="1155" dy="14">when confidence falls</tspan>
+  <tspan x="1155" dy="14">below the threshold</tspan>
+</text>
+
+</svg>

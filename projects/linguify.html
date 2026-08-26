@@ -130,6 +130,51 @@
                 </p>
             </div>
 
+            <div class="project-section">
+                <h2>CI/CD Pipeline</h2>
+                <div class="img-wrapper">
+                    <img src="../images/projects/linguify-cicd-pipeline.png"
+                        alt="Linguify CI/CD pipeline: GitHub Actions, AWS OIDC, and Elastic Beanstalk deployment flow">
+                </div>
+                <p>
+                    Every code change is automatically tested, and only deployed to production
+                    once verified. The pipeline authenticates to AWS using short-lived,
+                    cryptographically signed tokens via OpenID Connect (OIDC) — no long-lived
+                    access keys stored anywhere in GitHub, at any point in the chain.
+                </p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Secretless Authentication</h3>
+                        <p>
+                            GitHub Actions authenticates to AWS via OIDC instead of stored access
+                            keys. Each workflow run requests a short-lived, signed identity token,
+                            scoped to a specific repository and branch, exchanged for temporary
+                            AWS credentials that expire when the job completes.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Least-Privilege IAM</h3>
+                        <p>
+                            The deployment role's permissions were built incrementally against real
+                            AWS errors rather than granted from a broad managed policy — scoped
+                            precisely to what this application, in this environment, in this
+                            account, actually requires to deploy.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Test-Gated Deployment</h3>
+                        <p>
+                            A dedicated CI workflow runs the full test suite on every push. The
+                            deployment workflow only triggers after CI completes, and only proceeds
+                            if every test passed — broken code is blocked before it ever reaches
+                            the live environment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Styled Tech Pills -->
             <div class="project-section">
                 <h2>Technology Stack</h2>
@@ -139,6 +184,8 @@
                     <span>Python</span>
                     <span>Document Processing</span>
                     <span>AWS</span>
+                    <span>GitHub Actions</span>
+                    <span>OIDC</span>
                 </div>
             </div>
 

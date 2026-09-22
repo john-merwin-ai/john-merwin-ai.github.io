@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SageMaker Churn Pipeline | AWS MLOps Project</title>
+    <meta name="description"
+        content="An end-to-end AWS SageMaker MLOps pipeline for customer churn prediction — data, training, tuning, registry, deployment, drift monitoring, and automation.">
+    <!-- Inter Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-15P4J6K5QG"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-15P4J6K5QG');
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                John <span class="logo-accent">Merwin</span>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#applied-ml">Projects</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container to align layout with CSS grid -->
+    <main class="container project-page">
+
+        <!-- Hero Header -->
+        <section class="project-header">
+            <div class="badge">Applied ML / MLOps</div>
+            <h1>
+                SageMaker Churn <span class="text-gradient">Prediction Pipeline</span>
+            </h1>
+            <p class="hero-subtitle">
+                An end-to-end, production-grade MLOps pipeline built on AWS SageMaker
+            </p>
+        </section>
+
+        <!-- Project Body Content -->
+        <section class="project-content">
+
+            <div class="project-section">
+                <h2>The Challenge</h2>
+                <p>
+                    Most portfolio ML projects stop at a notebook with a good accuracy score.
+                    This project was built to go the rest of the way: a customer-churn
+                    predictor on the IBM Telco dataset, taken through every stage a real
+                    production model needs — preprocessing, training, automated tuning, a
+                    versioned registry gate, cost-aware deployment, drift monitoring, and full
+                    automation — all on a single AWS account, built and secured one brick at a
+                    time.
+                </p>
+            </div>
+
+            <!-- Standout Callout Styling for Impact -->
+            <div class="project-section highlight-card">
+                <h2>⚡ Impact</h2>
+                <p>
+                    Diagnosed a wide train/validation AUC gap during initial evaluation and
+                    closed it from <strong>0.17 to 0.012</strong> — a <strong>14x reduction</strong> —
+                    through automated Bayesian hyperparameter tuning. The production drift
+                    monitor was then validated against a synthetic batch with known ground
+                    truth, correctly flagging <strong>all 3</strong> deliberately altered
+                    columns with zero false positives on the data left unchanged.
+                </p>
+            </div>
+
+            <div class="project-section">
+                <h2>Workflow Overview</h2>
+                <div class="img-wrapper">
+                    <img src="../images/projects/sagemaker-workflow-overview.png"
+                        alt="SageMaker churn pipeline workflow overview, stages 0 through 7">
+                </div>
+                <p>
+                    The pipeline runs as eight staged builds: environment and IAM setup,
+                    preprocessing, training, hyperparameter tuning, model registry, deployment,
+                    drift monitoring, and MLOps automation — each stage built, run, inspected,
+                    and documented before moving to the next.
+                </p>
+            </div>
+
+            <div class="project-section">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Automated Hyperparameter Tuning</h3>
+                        <p>
+                            A Bayesian search across hundreds of configurations, each scored
+                            against held-out data, closed the overfitting gap by more than an
+                            order of magnitude without manual trial and error.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Cost-Aware Deployment</h3>
+                        <p>
+                            Batch Transform was chosen over a real-time endpoint to match a
+                            periodic-scoring workload — no idle infrastructure, no idle billing
+                            between runs.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Self-Monitoring Pipeline</h3>
+                        <p>
+                            A custom drift-detection check compares new batches against training
+                            baselines, replacing a managed service that's built for real-time
+                            endpoints and no longer open to new customers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Technical Architecture</h2>
+                <div class="img-wrapper">
+                    <img src="../images/projects/sagemaker-architecture-technical.png"
+                        alt="SageMaker churn pipeline technical architecture diagram">
+                </div>
+                <p>
+                    The platform combines SageMaker Processing, Training, and Hyperparameter
+                    Tuning jobs with a Model Registry gate, S3-backed artifacts, and
+                    least-privilege IAM spanning three distinct identities — each permission
+                    added only as a real <code>AccessDenied</code> error surfaced, never
+                    granted up front.
+                </p>
+            </div>
+
+            <div class="project-section">
+                <h2>MLOps Automation</h2>
+                <div class="img-wrapper">
+                    <img src="../images/projects/sagemaker-automation-pipeline.png"
+                        alt="EventBridge, SageMaker Pipeline, and SNS automation flow">
+                </div>
+                <p>
+                    The final stage ties the system together: an EventBridge rule fires on real
+                    Batch Transform completions, triggering a SageMaker Pipeline that runs the
+                    drift check and publishes results to SNS — verified end to end in
+                    production, with zero manual intervention.
+                </p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Event-Driven Trigger</h3>
+                        <p>
+                            EventBridge listens for Batch Transform completions and triggers the
+                            drift-monitoring Pipeline automatically — no polling, no cron job,
+                            no manual step.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Least-Privilege IAM</h3>
+                        <p>
+                            Permissions were added incrementally against real access-denied
+                            errors across three distinct identities, rather than granted from a
+                            broad managed policy up front.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <h3>Verified End to End</h3>
+                        <p>
+                            A real production run confirmed the full chain: a batch completes,
+                            drift is detected, and an SNS alert email arrives — with nothing
+                            manual in between.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Styled Tech Pills -->
+            <div class="project-section">
+                <h2>Technology Stack</h2>
+                <div class="tech-pills">
+                    <span>AWS SageMaker</span>
+                    <span>S3</span>
+                    <span>IAM</span>
+                    <span>EventBridge</span>
+                    <span>SNS</span>
+                    <span>XGBoost</span>
+                    <span>Python</span>
+                    <span>boto3</span>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Project Status</h2>
+                <p>
+                    This project is maintained in a private repository. It was built as a
+                    structured, end-to-end MLOps exercise — from raw data through automated
+                    production monitoring — on a single AWS account, with security and cost
+                    treated as first-class design constraints throughout.
+                </p>
+            </div>
+
+            <!-- Centered Back Button -->
+            <div class="action-footer">
+                <a class="button primary" href="../index.html">
+                    Back to Portfolio
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 John Merwin</p>
+    </footer>
+
+</body>
+
+</html>
